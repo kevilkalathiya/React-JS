@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="para">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
+      officia, incidunt voluptate molestiae facere provident at enim blanditiis
+      libero magni iusto adipisci vero obcaecati, repellendus quis sed, mollitia
+      iste nulla?Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      Voluptatibus quo quidem eaque. Recusandae iure minus obcaecati rem ex,
+      accusantium sunt et nam voluptas aliquam necessitatibus odio expedita
+      veniam magnam. Dicta. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Ducimus dolore quod voluptatum dignissimos pariatur, perferendis
+      rem, nemo cumque aut cupiditate culpa illum atque suscipit voluptas, alias
+      deserunt optio quia debitis. Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Maiores adipisci distinctio pariatur quo laboriosam
+      aspernatur debitis facilis tenetur officiis reiciendis quia, aliquid eaque
+      eos neque tempore quod, libero, doloremque quibusdam.
+    </p>
+    <button id="light">lightblue</button>
+    <button id="yellow">yellow</button>
+    <button id="pink">pink</button>
+    <button id="lyp">lightblue/yellow/pink</button>
+  </body>
+</html>
+<script>
+  para = document.getElementById("para");
+  light = document.getElementById("light");
+  yellow = document.getElementById("yellow");
+  pink = document.getElementById("pink");
+  both = document.getElementById("lyp");
+
+  light.addEventListener("click", function () {
+    para.style.background = "lightblue";
+  });
+
+  yellow.addEventListener("click", function () {
+    para.style.background = "yellow";
+  });
+
+  pink.addEventListener("click", function () {
+    para.style.background = "pink";
+  });
+
+  both.addEventListener("click", function () {
+    if (para.style.background == "lightblue") {
+      para.style.background = "yellow";
+    } else if (para.style.background == "yellow") {
+      para.style.background = "pink";
+    } else {
+      para.style.background = "lightblue";
+    }
+  });
+</script>

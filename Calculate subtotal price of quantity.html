@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello, world!</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+      }
+
+      table {
+        margin: 200px auto;
+      }
+
+      input {
+        width: 130px;
+      }
+ 
+    </style>
+  </head>
+  <body>
+    <div>
+      <table>
+        <tr>
+          <th>Product info</th>
+          <th>Quantity</th>
+          <th>
+            price<br />
+            ( per gm )
+          </th>
+          <th>price<br />( sub total )</th>
+        </tr>
+        <tr>
+          <th>Gold</th>
+          <td>
+            <input
+              type="number"
+              id="GQuan"
+              min="0"
+              max="10"
+              onchange="change()"
+            />
+          </td>
+          <td>&#8377 5874</td>
+          <td>&#8377 <span id="Gspan"> 0</span></td>
+          <td>
+            <button onclick="Goldremove()" class="btn btn-success">Remove</button>
+          </td>
+        </tr>
+        <tr>
+          <th>Silver</th>
+          <td>
+            <input
+              type="number"
+              id="SQuan"
+              min="0"
+              max="10"
+              onchange="change()"
+            />
+          </td>
+          <td>&#8377 72</td>
+          <td>&#8377 <span id="Sspan"> 0</span></td>
+          <td>
+            <button onclick="silverremove()" class="btn btn-success">Remove</button>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>         
+          <td></td>
+          <td>&#8377 <span id="total">0</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+<script>
+  goldQ = document.getElementById("GQuan");
+  silverQ = document.getElementById("SQuan");
+  gspa = document.getElementById("Gspan");
+  sspa = document.getElementById("Sspan");
+  total = document.getElementById("total");
+  
+  function change()
+  {
+    Gold = goldQ.value * 5874;
+    gspa.innerHTML = Gold
+    silver = silverQ.value * 72;
+    sspa.innerHTML = silver
+    total.innerHTML =  Gold+silver
+  }
+
+  function Goldremove() {
+    if (goldQ.value > 0) {
+        goldQ.value = goldQ.value - 1;
+        Gold = goldQ.value * 5874;
+        silver = silverQ.value * 72;
+        gspa.innerHTML = Gold
+        total.innerHTML = Gold + silver ;
+    }
+  }
+
+  function silverremove() {
+    if (silverQ.value > 0) {
+        silverQ.value = silverQ.value - 1;
+        Gold = goldQ.value * 5874;
+        silver = silverQ.value * 72;
+        sspa.innerHTML = silver
+        total.innerHTML = Gold + silver ;
+    }
+  }
+
+</script>
